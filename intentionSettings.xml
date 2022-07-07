@@ -1,0 +1,6 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="Java/Code style/Put arguments on separate lines" />
+    <ignoreAction name="Java/Other/Merge sequential method calls into call chain" />
+  </component>
+</application>
