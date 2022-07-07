@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "207453558422",
+    "firebase_url": "https://keuangan-490c7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "keuangan-490c7",
+    "storage_bucket": "keuangan-490c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207453558422:android:8390d18440cb043d8f94b7",
+        "android_client_info": {
+          "package_name": "com.muza.tugas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207453558422-6b70rj9obssnv2mmf3hraodm9f1duc0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAtrn1GVL8gtMsmGfq0LWXywPveFULAII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207453558422-6b70rj9obssnv2mmf3hraodm9f1duc0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
