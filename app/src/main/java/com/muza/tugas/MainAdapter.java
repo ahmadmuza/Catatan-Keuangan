@@ -20,7 +20,7 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         private List<ModelTransaksi> mTransaksi;
-        private Context mContext;
+        private  Context mContext;
 
 
         public MainAdapter(List<ModelTransaksi> mTransaksi, Context mContext) {
@@ -29,6 +29,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         }
 
         public void addItem (ModelTransaksi newTransaksi) {
+
             this.mTransaksi.add(newTransaksi);
         }
 
@@ -38,7 +39,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             LayoutInflater inflater = LayoutInflater.from(mContext);
 
             // Inflate the custom layout
-            View transaksiView = inflater.inflate(R.layout.data_transaksi, parent, false);
+            View transaksiView = inflater.inflate(R.layout.item_transaksi, parent, false);
 
             // Return a new holder instance
             ViewHolder viewHolder = new ViewHolder(transaksiView);
@@ -74,9 +75,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
-                keterangan = (TextView) itemView.findViewById(R.id.kete);
-                jumlah = (TextView) itemView.findViewById(R.id.j);
-                tip = (TextView) itemView.findViewById(R.id.tip);
+                keterangan = (TextView) itemView.findViewById(R.id.title);
+                jumlah = (TextView) itemView.findViewById(R.id.amount);
+                tip = (TextView) itemView.findViewById(R.id.tglTrx);
 
             }
         }

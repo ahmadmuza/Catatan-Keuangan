@@ -34,6 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 import java.util.EventListener;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ExtendedFloatingActionButton mFloatingActionButton;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText tipe;
     private RecyclerView mRecyclerView;
     private MainAdapter mAdapter;
+    // Membuat daftar pesan kosong
+    private List<ModelTransaksi> transaksi = new ArrayList<>();
     private ArrayList<ModelTransaksi> daftarTransaksi;
     private DatabaseReference mDatabaseReference;
     private FirebaseDatabase mFirebaseInstance;
@@ -50,10 +53,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        mAdapter = new MainAdapter(daftarTransaksi, this);
-        RecyclerView rv = (RecyclerView) findViewById(R.id.list_transaksi);
+        mAdapter = new MainAdapter(transaksi, this);
+        RecyclerView rv = (RecyclerView) findViewById(R.id.list);
         rv.setAdapter(mAdapter);
         // Set layout manager to position the items
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -84,14 +88,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                Toast.makeText(MainActivity.this,
-                        databaseError.getDetails() + " " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
             }
 
         });
-
         mFloatingActionButton = findViewById(R.id.tambah_transaksi);
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
                         DatabaseReference newMessageRef = database.getReference("/transaksi");
                         ModelTransaksi newTransaksi = new ModelTransaksi(ket.getText().toString(), mAuth.getUid(), System.currentTimeMillis(), jum.getText().toString(), tipe.getText().toString());
                         newMessageRef.push().setValue(newTransaksi);
+
 
                     }
                 }

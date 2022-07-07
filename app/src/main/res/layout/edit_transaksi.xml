@@ -36,14 +36,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Spinner
-            android:id="@+id/type_transaksi"
+        <EditText
+            android:id="@+id/tipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/array_type_trx"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-        </Spinner>
+            android:layout_weight="1.0"
+            android:hint="Tipe"
+            android:singleLine="true" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
